@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "196765853792",
+    "project_id": "backend-f92f6",
+    "storage_bucket": "backend-f92f6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:196765853792:android:6aabfc886d18c6fa43bb05",
+        "android_client_info": {
+          "package_name": "com.example.pengaduan_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "196765853792-2nb1a0bpvbirfbb16tab2v8q1f09anq9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwvPFrGINlsv8HJwcfs6Tl_ryVmcLYm1I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "196765853792-2nb1a0bpvbirfbb16tab2v8q1f09anq9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "196765853792-r0qluhj3q9bhfamkl08flje7i46ako11.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.pengaduanApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
