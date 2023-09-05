@@ -107,10 +107,10 @@ class _HomePageState extends State<HomePage> {
                 Padding(
                   padding: const EdgeInsets.only(left: 25.0),
                   child: ListTile(
-                    leading: Icon(Icons.home, color: Colors.lightBlue[400]),
+                    leading: Icon(Icons.home, color: Colors.black),
                     title: Text(
                       'Home',
-                      style: TextStyle(color: Colors.lightBlue[400]),
+                      style: TextStyle(color: Colors.black),
                     ),
                   ),
                 ),
@@ -118,10 +118,10 @@ class _HomePageState extends State<HomePage> {
                 Padding(
                   padding: const EdgeInsets.only(left: 25.0),
                   child: ListTile(
-                    leading: Icon(Icons.info, color: Colors.lightBlue[400]),
+                    leading: Icon(Icons.info, color: Colors.black),
                     title: Text(
                       'About',
-                      style: TextStyle(color: Colors.lightBlue[400]),
+                      style: TextStyle(color: Colors.black),
                     ),
                   ),
                 ),
@@ -134,10 +134,10 @@ class _HomePageState extends State<HomePage> {
               child: Padding(
                 padding: const EdgeInsets.only(left: 25.0, bottom: 25),
                 child: ListTile(
-                  leading: Icon(Icons.logout, color: Colors.lightBlue[400]),
+                  leading: Icon(Icons.logout, color: Colors.black),
                   title: Text(
                     'Log out',
-                    style: TextStyle(color: Colors.lightBlue[400]),
+                    style: TextStyle(color: Colors.black),
                   ),
                 ),
               ),
@@ -159,7 +159,7 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: const EdgeInsets.only(top: 30, left: 30),
               child: Text(
-                'Masuk Sebagai',
+                'Masuk Sebagai ' + user.email!,
                 style: TextStyle(
                     fontSize: 19,
                     color: Colors.black,

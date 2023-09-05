@@ -50,19 +50,19 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBvuUa3j9rChqNgk0pjAVjQGFoplzeT-No',
-    appId: '1:196765853792:web:34c28c7ab0eb45cc43bb05',
-    messagingSenderId: '196765853792',
-    projectId: 'backend-f92f6',
-    authDomain: 'backend-f92f6.firebaseapp.com',
-    storageBucket: 'backend-f92f6.appspot.com',
+    apiKey: 'AIzaSyBIPlAJ3S0EZ-4WuvshebINOYMNvGm14W8',
+    appId: '1:260953033275:web:37fa4e7cd169ae199caa1e',
+    messagingSenderId: '260953033275',
+    projectId: 'backend-5f59d',
+    authDomain: 'backend-5f59d.firebaseapp.com',
+    storageBucket: 'backend-5f59d.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBwvPFrGINlsv8HJwcfs6Tl_ryVmcLYm1I',
-    appId: '1:196765853792:android:6aabfc886d18c6fa43bb05',
-    messagingSenderId: '196765853792',
-    projectId: 'backend-f92f6',
-    storageBucket: 'backend-f92f6.appspot.com',
+    apiKey: 'AIzaSyBfuJRHvDi6nnhTljyquFfAxMxuogkR4S8',
+    appId: '1:260953033275:android:71d9a2b84cf6b59e9caa1e',
+    messagingSenderId: '260953033275',
+    projectId: 'backend-5f59d',
+    storageBucket: 'backend-5f59d.appspot.com',
   );
 }

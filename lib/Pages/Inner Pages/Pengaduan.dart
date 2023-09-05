@@ -1,4 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:pengaduan_app/Pages/Home_pages.dart';
 
 class Tiket extends StatefulWidget {
   const Tiket({super.key});
@@ -11,10 +13,15 @@ class _TiketState extends State<Tiket> {
   List<String> paketlayanan = ["INDIBIS", "ASTINET", "WMS", "SPGDT 119"];
   String _paketlayanan = "INDIBIS";
 
-  TextEditingController controllerNama = TextEditingController();
-  TextEditingController controllerOPD = TextEditingController();
-  TextEditingController controllerOTP = TextEditingController();
-  TextEditingController controllerKeluhan = TextEditingController();
+  final _namaController = TextEditingController();
+  final _opdController = TextEditingController();
+  final _otpController = TextEditingController();
+  final _keluhanController = TextEditingController();
+
+  Future keluhanDetails() async {
+    final CollectionReference _Tiket =
+        FirebaseFirestore.instance.collection('pengaduan');
+  }
 
   void pilihpaketlayanan(String? value) {
     setState(() {
@@ -38,7 +45,7 @@ class _TiketState extends State<Tiket> {
               padding: EdgeInsets.only(top: 5.0),
             ),
             Text(
-              "Nama Lengkap : ${controllerNama.text}",
+              "Nama Lengkap : ${_namaController.text}",
               style: const TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
@@ -49,7 +56,7 @@ class _TiketState extends State<Tiket> {
               padding: EdgeInsets.only(top: 10.0),
             ),
             Text(
-              "Nama OPD : ${controllerOPD.text}",
+              "Nama OPD : ${_opdController.text}",
               style: const TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
@@ -71,7 +78,7 @@ class _TiketState extends State<Tiket> {
               padding: EdgeInsets.only(top: 10.0),
             ),
             Text(
-              "Nomor OTP : ${controllerOTP.text}",
+              "Nomor OTP : ${_otpController.text}",
               style: const TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
@@ -82,7 +89,7 @@ class _TiketState extends State<Tiket> {
               padding: EdgeInsets.only(top: 10.0),
             ),
             Text(
-              "Keluhan : ${controllerKeluhan.text}",
+              "Keluhan : ${_keluhanController.text}",
               style: const TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
@@ -152,14 +159,25 @@ class _TiketState extends State<Tiket> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffDDDADA),
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back, color: Colors.black),
+        backgroundColor: Colors.transparent,
+        leading: IconButton(
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => HomePage()));
+            },
+            icon: Icon(
+              Icons.arrow_back,
+              color: Colors.black,
+            )),
+        elevation: 0,
         title: Text(
           "Tiket Pengaduan",
           style: TextStyle(
-              fontSize: 25, fontWeight: FontWeight.bold, color: Colors.black),
+              fontSize: 26, fontWeight: FontWeight.w500, color: Colors.black),
         ),
-        backgroundColor: Colors.grey[400],
+        centerTitle: true,
       ),
       //Form Tiketing
       body: ListView(
@@ -169,7 +187,7 @@ class _TiketState extends State<Tiket> {
             child: Column(
               children: <Widget>[
                 TextField(
-                  controller: controllerNama,
+                  controller: _namaController,
                   decoration: InputDecoration(
                       hintText: "Nama Lengkap",
                       labelText: "Nama Lengkap",
@@ -180,7 +198,7 @@ class _TiketState extends State<Tiket> {
                   padding: EdgeInsets.only(top: 20.0),
                 ),
                 TextField(
-                  controller: controllerOPD,
+                  controller: _opdController,
                   decoration: InputDecoration(
                       hintText: "Nama OPD",
                       labelText: "Nama OPD",
@@ -215,7 +233,7 @@ class _TiketState extends State<Tiket> {
                   padding: EdgeInsets.only(top: 20.0),
                 ),
                 TextField(
-                  controller: controllerOTP,
+                  controller: _otpController,
                   decoration: InputDecoration(
                       hintText: "Nomor OTP",
                       labelText: "Nomor OTP",
@@ -226,7 +244,7 @@ class _TiketState extends State<Tiket> {
                   padding: EdgeInsets.only(top: 20.0),
                 ),
                 TextField(
-                  controller: controllerKeluhan,
+                  controller: _keluhanController,
                   maxLines: 4,
                   decoration: InputDecoration(
                       hintText: "Keluhan",
@@ -238,22 +256,20 @@ class _TiketState extends State<Tiket> {
                   padding: EdgeInsets.only(top: 20.0),
                 ),
                 GestureDetector(
-                  onTap: () {
-                    kirimdata();
-                  },
+                  onTap: keluhanDetails,
                   child: Container(
                     padding: const EdgeInsets.all(15),
-                    margin: const EdgeInsets.symmetric(horizontal: 10),
+                    margin: const EdgeInsets.symmetric(horizontal: 15),
                     decoration: BoxDecoration(
                         color: Colors.grey[400],
-                        borderRadius: BorderRadius.circular(10)),
+                        borderRadius: BorderRadius.circular(15)),
                     child: const Center(
                       child: Text(
                         "Kirim",
                         style: TextStyle(
                           color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 25,
                         ),
                       ),
                     ),
