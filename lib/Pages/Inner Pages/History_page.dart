@@ -71,10 +71,24 @@ class _HistoryPageState extends State<HistoryPage> {
                               ),
                               child: Container(
                                 decoration: BoxDecoration(
-                                    border: Border(bottom: BorderSide())),
+                                    border: Border(
+                                        bottom: BorderSide(
+                                  color: Colors.black,
+                                  width: 1,
+                                ))),
                                 child: ListTile(
-                                  title: Text(records['opd']),
-                                  subtitle: Text(records['keluhan']),
+                                  title: Text(
+                                    records['opd'],
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 16,
+                                    ),
+                                  ),
+                                  subtitle: Text(
+                                    records['keluhan'],
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 12),
+                                  ),
                                 ),
                               ));
                         });
