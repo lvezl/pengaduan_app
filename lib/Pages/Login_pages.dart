@@ -42,15 +42,18 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
-                  Icons.android,
-                  size: 120,
+                Image(
+                  image: AssetImage(
+                    'lib/asset/lobar.png',
+                  ),
+                  height: 240,
+                  width: 240,
                 ),
                 SizedBox(
                   height: 75,
                 ),
                 Text(
-                  'Hello Welcome Home!!',
+                  'Selamat Datang ',
                   style: GoogleFonts.bebasNeue(
                     fontSize: 52,
                   ),
@@ -59,7 +62,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: 10,
                 ),
                 Text(
-                  'We Missed you',
+                  'Silahkan Login',
                   style: TextStyle(fontSize: 20),
                 ),
 

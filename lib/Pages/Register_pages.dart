@@ -53,15 +53,16 @@ class _RegisterPageState extends State<RegisterPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
-                  Icons.android,
-                  size: 120,
+                Image(
+                  image: AssetImage('lib/asset/lobar.png'),
+                  height: 240,
+                  width: 240,
                 ),
                 SizedBox(
                   height: 75,
                 ),
                 Text(
-                  'Hello There',
+                  'Belum Punya Akun?',
                   style: GoogleFonts.bebasNeue(
                     fontSize: 52,
                   ),

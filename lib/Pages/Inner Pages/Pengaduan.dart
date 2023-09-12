@@ -18,9 +18,11 @@ class _TiketState extends State<Tiket> {
   final _otpController = TextEditingController();
   final _keluhanController = TextEditingController();
 
-  Future keluhanDetails() async {
-    final CollectionReference _Tiket =
-        FirebaseFirestore.instance.collection('pengaduan');
+  Future keluhanDetails(
+      String nama, String opd, int otp, String keluhan) async {
+    await FirebaseFirestore.instance
+        .collection('pengaduan')
+        .add({'nama': nama, 'opd': opd, 'otp': otp, 'keluhan': keluhan});
   }
 
   void pilihpaketlayanan(String? value) {
@@ -256,7 +258,7 @@ class _TiketState extends State<Tiket> {
                   padding: EdgeInsets.only(top: 20.0),
                 ),
                 GestureDetector(
-                  onTap: keluhanDetails,
+                  onTap: kirimdata,
                   child: Container(
                     padding: const EdgeInsets.all(15),
                     margin: const EdgeInsets.symmetric(horizontal: 15),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pengaduan_app/Pages/Home_pages.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ContactPage extends StatefulWidget {
   const ContactPage({super.key});
@@ -35,16 +36,40 @@ class _ContactPageState extends State<ContactPage> {
         ),
         centerTitle: true,
       ),
+      body: content(),
     );
   }
 
   Widget content() {
+    final Uri whatsapp = Uri.parse('https://wa.me/083189887622');
+    final Uri phoneNumber = Uri.parse('tel:+62-831-898-876-22');
     return Center(
       child: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            GestureDetector(onTap: (() async {}), child: Icon(Icons.chat))
+            GestureDetector(
+              onTap: (() async {
+                launchUrl(whatsapp);
+              }),
+              child: Image(
+                image: AssetImage('lib/asset/wa.png'),
+                height: 80,
+                color: Colors.green,
+              ),
+            ),
+            SizedBox(
+              height: 100,
+            ),
+            GestureDetector(
+                onTap: (() async {
+                  print(await canLaunchUrl(phoneNumber));
+                }),
+                child: Icon(
+                  Icons.call,
+                  size: 80,
+                  color: Colors.green,
+                )),
           ],
         ),
       ),

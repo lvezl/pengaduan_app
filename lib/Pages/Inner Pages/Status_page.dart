@@ -30,7 +30,7 @@ class StatusPage extends StatelessWidget {
                 TextFormField(
                   decoration: InputDecoration(
                     labelText: "label",
-                    hintText: "honted",
+                    hintText: "hinted",
                     enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(width: 3, color: Colors.grey)),
                   ),
