@@ -41,8 +41,8 @@ class _ContactPageState extends State<ContactPage> {
   }
 
   Widget content() {
-    final Uri whatsapp = Uri.parse('https://wa.me/083189887622');
-    final Uri phoneNumber = Uri.parse('tel:+62-831-898-876-22');
+    final Uri whatsapp1 = Uri.parse('https://wa.me/+6283189887622');
+    final Uri whatsapp2 = Uri.parse('tel:+62-831-8988-7622');
     return Center(
       child: Container(
         child: Column(
@@ -50,26 +50,55 @@ class _ContactPageState extends State<ContactPage> {
           children: [
             GestureDetector(
               onTap: (() async {
-                launchUrl(whatsapp);
+                launchUrl(whatsapp1);
               }),
-              child: Image(
-                image: AssetImage('lib/asset/wa.png'),
-                height: 80,
-                color: Colors.green,
+              child: Column(
+                children: [
+                  Image(
+                    image: AssetImage('lib/asset/wa.png'),
+                    height: 80,
+                    color: Colors.green,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'Admin 1',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16,
+                    ),
+                  )
+                ],
               ),
             ),
             SizedBox(
               height: 100,
             ),
             GestureDetector(
-                onTap: (() async {
-                  print(await canLaunchUrl(phoneNumber));
-                }),
-                child: Icon(
-                  Icons.call,
-                  size: 80,
-                  color: Colors.green,
-                )),
+              onTap: (() async {
+                launchUrl(whatsapp2);
+              }),
+              child: Column(
+                children: [
+                  Image(
+                    image: AssetImage('lib/asset/wa.png'),
+                    height: 80,
+                    color: Colors.green,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'Admin 2',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16,
+                    ),
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),

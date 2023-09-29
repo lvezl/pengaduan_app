@@ -78,7 +78,7 @@ class _HistoryPageState extends State<HistoryPage> {
                                 ))),
                                 child: ListTile(
                                   title: Text(
-                                    records['opd'],
+                                    records['OPD'],
                                     style: TextStyle(
                                       color: Colors.black,
                                       fontSize: 16,

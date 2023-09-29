@@ -2,8 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pengaduan_app/Pages/Inner%20Pages/Contact.dart';
 import 'package:pengaduan_app/Pages/Inner%20Pages/History_page.dart';
-import 'package:pengaduan_app/Pages/Inner%20Pages/Pengaduan.dart';
-import 'package:pengaduan_app/Pages/Inner%20Pages/Status_page.dart';
+import 'package:pengaduan_app/Pages/Inner%20Pages/add_or_edit_data.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -194,7 +193,7 @@ class _HomePageState extends State<HomePage> {
                             onTap: () {
                               Navigator.of(context).pushReplacement(
                                   MaterialPageRoute(
-                                      builder: (context) => Tiket()));
+                                      builder: (context) => StatusPage()));
                             },
                             child: _selectedExtras(
                               image: 'lib/asset/document.png',
